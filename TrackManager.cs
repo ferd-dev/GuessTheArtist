@@ -22,7 +22,7 @@ namespace GuessTheArtist
             _random = new Random();
         }
 
-        public bool Run()
+        public bool VerifyArtist()
         {
             while (_trackNumber < _artist.Tracks.Length)
             {
@@ -48,7 +48,7 @@ namespace GuessTheArtist
 
         private void PrintSuccessMessage()
         {
-            Console.WriteLine("Congratulations the artist managed to guess");
+            Console.WriteLine("Congratulations :) the artist managed to guess");
         }
 
         private void PrintErrorMessage()

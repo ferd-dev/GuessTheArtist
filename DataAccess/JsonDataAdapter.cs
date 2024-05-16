@@ -28,14 +28,17 @@ namespace GuessTheArtist.DataAccess
             }
             catch (FileNotFoundException)
             {
+                Log.Error("Database file not found.", "JsonDataAdapter.cs");
                 Console.WriteLine("Database file not found.");
             }
             catch (JsonException)
             {
+                Log.Error("The database file is not valid JSON.", "JsonDataAdapter.cs");
                 Console.WriteLine("The database file is not valid JSON.");
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message, "JsonDataAdapter.cs");
                 Console.WriteLine($"ERROR: {ex.Message}");
             }
         }
@@ -61,6 +64,7 @@ namespace GuessTheArtist.DataAccess
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message, "JsonDataAdapter.cs");
                 Console.WriteLine($"ERROR: {ex.Message}");
             }
 
@@ -86,6 +90,7 @@ namespace GuessTheArtist.DataAccess
             }
             catch (Exception ex)
             {
+                Log.Error(ex.Message, "JsonDataAdapter.cs");
                 Console.WriteLine($"Error: {ex.Message}");
                 return null;
             }
@@ -95,6 +100,7 @@ namespace GuessTheArtist.DataAccess
         {
             if (_database.Genres == null)
             {
+                Log.Error("No genres were found in the database.", "JsonDataAdapter.cs");
                 throw new Exception("No genres were found in the database.");
             }
         }
@@ -103,7 +109,8 @@ namespace GuessTheArtist.DataAccess
         {
             if (_database == null)
             {
-                throw new Exception("No genres were found in the database.");
+                Log.Error("The database is empty.", "JsonDataAdapter.cs");
+                throw new Exception("The database is empty.");
             }
         }
 
@@ -111,6 +118,7 @@ namespace GuessTheArtist.DataAccess
         {
             if (genre == null)
             {
+                Log.Error("The genus was not found in the database.", "JsonDataAdapter.cs");
                 throw new Exception($"The genus was not found in the database.");
             }
         }
@@ -119,6 +127,7 @@ namespace GuessTheArtist.DataAccess
         {
             if (genre.Artists == null || genre.Artists.Length == 0)
             {
+                Log.Error("No artists found for the genre", "JsonDataAdapter.cs");
                 throw new Exception("No artists found for the genre.");
             }
         }

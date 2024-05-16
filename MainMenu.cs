@@ -11,8 +11,20 @@ namespace GuessTheArtist
     {
         private List<Genre> _genres;
 
-        public MainMenu(List<Genre> genres) { 
-            _genres = genres;
+        public MainMenu(List<Genre> genres) {
+            try
+            {
+                if (genres == null) {
+                    throw new ArgumentNullException("There are no genres to show.");
+                }
+                _genres = genres;
+            }
+            catch (ArgumentNullException ex) 
+            {
+                Log.Error(ex.Message, "MainMenu.cs");
+                Console.WriteLine(ex.Message);
+            }
+            
         }
         public string print()
         {
@@ -50,7 +62,19 @@ namespace GuessTheArtist
         private string ReadEntry()
         {
             string entry = Console.ReadLine();
+            if (entry == "N") {
+                return entry;
+            }
+            if (!GenreExists(entry))
+            {
+                return null;
+            }
             return entry;
+        }
+
+        private bool GenreExists(string genreName)
+        {
+            return _genres.Exists(genre => genre.Name.Equals(genreName, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

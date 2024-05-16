@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GuessTheArtist")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94e654dfdccc21462d1cdf02ad07baba50cd6e97")]
 [assembly: System.Reflection.AssemblyProductAttribute("GuessTheArtist")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GuessTheArtist")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

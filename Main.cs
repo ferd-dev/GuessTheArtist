@@ -11,7 +11,6 @@ class MainProgrma
 
     static void Main(string[] args)
     {
-        
         List<Genre> genres = DataAdapter.GetGenres();
         MainMenu menu = new MainMenu(genres);
 
@@ -20,26 +19,27 @@ class MainProgrma
         {
             PrintPoints();
             value = menu.print();
-            value = CapitalizeInput(value);
-         
-
-            if (value != "N")
+            
+            if (value != null)
             {
-                Console.Clear();
-                Console.WriteLine($"Seleccionaste {value}");
+                value = CapitalizeInput(value);
 
-                Artist artist = DataAdapter.GetRandomArtistsByGenre(value);
-                TrackManager trackManager = new TrackManager(artist);
-                bool resp = trackManager.Run();
-                AddPoint(resp);
-
-
-                if (!KeepPlaying())
+                if (value != "N")
                 {
-                    EndGaame();
-                }
-            }
+                    Console.Clear();
+                    Console.WriteLine($"Seleccionaste {value}");
 
+                    Artist artist = DataAdapter.GetRandomArtistsByGenre(value);
+                    TrackManager trackManager = new TrackManager(artist);
+                    bool verifyArtist = trackManager.VerifyArtist();
+                    AddPoint(verifyArtist);
+
+                    if (!KeepPlaying())
+                    {
+                        EndGaame();
+                    }
+                }
+            }  
         } while (value != "N");
     }
 
@@ -64,7 +64,7 @@ class MainProgrma
     static void PrintPoints()
     {
         Console.WriteLine("------------------------------");
-        Console.WriteLine($"    Points: {Points} ");
+        Console.WriteLine($"|    Points: {Points}        |");
         Console.WriteLine("------------------------------");
     }
 

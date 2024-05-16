@@ -111,7 +111,7 @@ namespace GuessTheArtist.DataAccess
         {
             if (genre == null)
             {
-                throw new Exception($"The genus '{genre}' was not found in the database.");
+                throw new Exception($"The genus was not found in the database.");
             }
         }
 

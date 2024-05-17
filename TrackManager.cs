@@ -31,7 +31,7 @@ namespace GuessTheArtist
                 PrintTrackNumber();
                 PrintTrack(_artist.Tracks[_trackNumber - 1]);
 
-                Console.Write("Responde: ");
+                Console.Write("Your answer: ");
                 string answer = Console.ReadLine();
 
                 if (VerifyAnswer(answer))
@@ -71,7 +71,7 @@ namespace GuessTheArtist
 
         private void PrintTrackNumber()
         {
-            Console.WriteLine($"Pista #: {_trackNumber}  de {_artist.Tracks.Length}");
+            Console.WriteLine($"Track #: {_trackNumber}  de {_artist.Tracks.Length}");
             Console.WriteLine("------------------------------------------");
         }
     }

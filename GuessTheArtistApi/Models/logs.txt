@@ -1,0 +1,4 @@
+ERROR: [message: No genres were found in the database.] - [FielName: JsonDataAdapter.cs] - [Date: 2024-05-25 Time: 14:58]
+ERROR: [message: No genres were found in the database.] - [FielName: JsonDataAdapter.cs] - [Date: 2024-05-25 Time: 14:58]
+ERROR: [message: No genres were found in the database.] - [FielName: JsonDataAdapter.cs] - [Date: 2024-05-25 Time: 14:58]
+ERROR: [message: No genres were found in the database.] - [FielName: JsonDataAdapter.cs] - [Date: 2024-05-25 Time: 14:58]

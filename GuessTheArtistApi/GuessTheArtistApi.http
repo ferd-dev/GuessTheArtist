@@ -1,0 +1,6 @@
+@GuessTheArtistApi_HostAddress = http://localhost:5124
+
+GET {{GuessTheArtistApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

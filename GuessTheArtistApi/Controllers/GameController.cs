@@ -11,36 +11,36 @@ namespace GuessTheArtistApi.Controllers
         private DataManager _dataManager = new DataManager();
         private PointsManajer _score = new PointsManajer();
 
-        [HttpGet("GetData")]
-        public ActionResult<IEnumerable<string>> GetData()
+        [HttpGet("Data")]
+        public ActionResult<IEnumerable<string>> Data()
         {
             var data = _dataManager.GetData();
             return Ok(data);
         }
 
-        [HttpGet("GetGenres")]
-        public ActionResult<IEnumerable<string>> GetGenres()
+        [HttpGet("Genres")]
+        public ActionResult<IEnumerable<string>> Genres()
         {
             var data = _dataManager.GetGenres();
             return Ok(data);
         }
 
-        [HttpGet("GetRandomArtistsByGenre/{genre}")]
-        public ActionResult<IEnumerable<string>> GetRandomArtistsByGenre(string genre)
+        [HttpGet("RandomArtistsByGenre/{genre}")]
+        public ActionResult<IEnumerable<string>> RandomArtistsByGenre(string genre)
         {
             var data = _dataManager.GetRandomArtistsByGenre(genre);
             return Ok(data);
         }
 
-        [HttpGet("GetArtistsByGenre/{genre}")]
-        public ActionResult<IEnumerable<string>> GetArtistsByGenre(string genre)
+        [HttpGet("ArtistsByGenre/{genre}")]
+        public ActionResult<IEnumerable<string>> ArtistsByGenre(string genre)
         {
             var data = _dataManager.GetArtistsByGenre(genre);
             return Ok(data);
         }
 
-        [HttpGet("GetArtistByName")]
-        public ActionResult<IEnumerable<string>> GetArtistByName(string artist)
+        [HttpGet("ArtistByName")]
+        public ActionResult<IEnumerable<string>> ArtistByName(string artist)
         {
             var data = _dataManager.GetArtistByName(artist);
             return Ok(data);
